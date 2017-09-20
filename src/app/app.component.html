@@ -1,4 +1,64 @@
+<header class="navbar navbar-dark navbar-fixed-top navbar-expand-lg container">
+  <a class="navbar-brand" [routerLink]="['/']" (click)="navbarCollapsed = true">
+    {{'title' | translate}}
+  </a>
+
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed"
+    [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbarContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/getting-started']" (click)="navbarCollapsed = true">
+          {{'menu.cottage' | translate}}
+        </a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/components']" (click)="navbarCollapsed = true">
+          {{'menu.rooms' | translate}}
+        </a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink]="['/components']" (click)="navbarCollapsed = true">
+          {{'menu.contact' | translate}}
+        </a>
+      </li>
+    </ul>
+    <span class="d-none d-lg-inline">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a [routerLink]="['/']" (click)="onTranslate('en')">
+            en
+          </a>
+        </li>
+        <li class="nav-item">
+          |
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/']" (click)="onTranslate('fr')">
+            fr
+          </a>
+        </li>
+      </ul>
+    </span>
+  </div>
+</header>
+
 <h1>
-  {{title}}
+  {{'title' | translate}}
 </h1>
+
+<section id="gites">
+  <h1>{{'cottageSection.title' | translate}}</h1>
+</section>
+
+<section id="chambres">
+  <h1>{{'roomSection.title' | translate}}</h1>
+</section>
+
+<section id="contact">
+  <h1>{{'contactSection.title' | translate}}</h1>
+</section>
 <router-outlet></router-outlet>

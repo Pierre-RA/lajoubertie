@@ -1,0 +1,17 @@
+{
+  "title": "La Joubertie",
+  "menu": {
+    "cottage": "cottages",
+    "rooms": "rooms",
+    "contact": "contact"
+  },
+  "cottageSection": {
+    "title": "Our cottages"
+  },
+  "roomSection": {
+    "title": "Our rooms"
+  },
+  "contactSection": {
+    "title": "Contact"
+  }
+}

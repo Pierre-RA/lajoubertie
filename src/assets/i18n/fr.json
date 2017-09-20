@@ -1,0 +1,17 @@
+{
+  "title": "La Joubertie",
+  "menu": {
+    "cottage": "gîtes",
+    "rooms": "chambres",
+    "contact": "contact"
+  },
+  "cottageSection": {
+    "title": "Nos gîtes"
+  },
+  "roomSection": {
+    "title": "Nos chambres"
+  },
+  "contactSection": {
+    "title": "Contact"
+  }
+}
