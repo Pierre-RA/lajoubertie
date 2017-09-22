@@ -1,5 +1,10 @@
-/*
-Theme Name: NG-WP
-Author: Stuart Kuentzel
-Author URI: http://doppiaeast.com
-*/
+/**
+ * blue: 136, 165, 196
+ */
+.blue {
+  color: rgb(136, 165, 196);
+}
+
+sup {
+  font-size: 60% !important;
+}

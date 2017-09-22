@@ -9,6 +9,34 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>
+    <style>
+      body {
+        background: rgb(136,165,196);
+        background: -moz-linear-gradient(45deg,  rgba(136,165,196,1) 39%, rgba(136,165,196,1) 39%, rgba(156,185,216,1) 100%);
+        background: -webkit-linear-gradient(45deg,  rgba(136,165,196,1) 39%,rgba(136,165,196,1) 39%,rgba(156,185,216,1) 100%);
+        background: linear-gradient(45deg,  rgba(136,165,196,1) 39%,rgba(136,165,196,1) 39%,rgba(156,185,216,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#88a5c4', endColorstr='#9cb9d8',GradientType=1 );
+        height: 100vh;
+        color: white;
+      }
+      .loading {
+        height: 100vh;
+        font-size: 3em;
+      }
+      .loading .inner {
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    </style>
+    <div class="loading">
+      <div class="inner">
+        <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+        <div>La Joubertie</div>
+      </div>
+    </div>
+  </app-root>
 </body>
 </html>

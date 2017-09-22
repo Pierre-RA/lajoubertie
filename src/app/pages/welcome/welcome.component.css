@@ -1,0 +1,41 @@
+.extra-plus-size {
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+.plus-size {
+  font-size: 1.6em;
+}
+
+.fancy {
+  font-variant: normal;
+  font-family: YouthAndBeauty, cursive;
+}
+
+section#title {
+  color: white;
+}
+
+.contained-title-img img {
+  max-width: 40%;
+  margin: 0 30%;
+}
+
+.contained-img img {
+  max-width: 100%;
+}
+
+.img-rounded {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+section > h1 {
+  font-variant: small-caps;
+  text-align: center;
+}

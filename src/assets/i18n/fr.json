@@ -1,17 +1,30 @@
 {
   "title": "La Joubertie",
-  "menu": {
-    "cottage": "gîtes",
-    "rooms": "chambres",
-    "contact": "contact"
-  },
-  "cottageSection": {
-    "title": "Nos gîtes"
-  },
-  "roomSection": {
-    "title": "Nos chambres"
-  },
-  "contactSection": {
-    "title": "Contact"
-  }
+  "lodges": "gîtes",
+  "rooms": "chambres",
+  "contact": "contact",
+  "Nos gîtes": "Nos gîtes",
+  "Nos chambres": "Nos chambres",
+  "Contact": "Contact",
+  "Régine et Olivier": "Régine et Olivier",
+  "vous accueillent": "vous accueillent",
+  "au cœur du Périgord": "au cœur du Périgord",
+  "Les gîtes de": "Les gîtes de",
+  "ouvrent": "ouvrent",
+  "dès le 1er juillet 2017": "dès le 1<sup>er</sup> juillet 2017",
+  "Erreur 404": "Erreur 404",
+  "La page demandée n'existe pas": "La page demandée n'existe pas.",
+  "personnes": "personnes",
+  "chambres": "chambres",
+  "salles de bain": "salles de bains",
+  "Réservations": "Réservations",
+  "Adresse": "Adresse",
+  "Lieu": "Lieu",
+  "Gîte 4 personnes": "Gîte 4 personnes",
+  "Gîte 2 personnes": "Gîte 2 personnes",
+  "Table d'hôtes proposée le soir du lundi au vendredi": "Table d'hôtes proposée le soir du lundi au vendredi",
+  "chiens admis": "chiens admins",
+  "Parc de 1,5 hectares": "Parc de 1,5 hectares",
+  "Piscine sécurisée": "Piscine sécurisée",
+  "Barbecue": "Barbecue"
 }

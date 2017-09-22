@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
+  year: '2017',
   wpBase: '//localhost/wp-json/wp/v2/'
 };

@@ -1,4 +1,50 @@
-header {
+.wrapper {
+  height: inherit;
+  padding: 20px 0;
+}
+
+.container-white {
+  min-height: 100%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+
+header,
+header button {
   font-variant: small-caps;
-  text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.2);
+}
+
+header button {
+  cursor: pointer;
+}
+
+.navbar-toggler:focus {
+  outline-style:none;
+  box-shadow:none;
+}
+
+@media(max-width: 575px) {
+  .white {
+    border-radius: 0;
+  }
+}
+
+footer {
+  color: rgba(0,0,0,0.7);
+}
+
+footer h6 {
+  font-family: YouthAndBeauty, cursive;
+  font-size: 1.4em;
+}
+
+hr {
+  width: 80%;
+  margin-left: 10%;
+  border-top: none;
+  border-bottom: 1px solid lightgrey;
+  box-shadow: none;
 }

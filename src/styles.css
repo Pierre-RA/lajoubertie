@@ -1,5 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-  background-image: url('/assets/img/background.jpg');
-  color: white;
+@font-face {
+  font-family: YouthAndBeauty;
+  src: url(/assets/fonts/Youth-and-Beauty.otf);
+}
+
+.wrapper {
+  background-attachment: fixed;
+  background-image: url('/assets/img/small-background.jpg');
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.joubertie {
+  text-transform: capitalize;
+  font-variant: normal;
+  font-family: YouthAndBeauty, cursive;
+  font-size: 1.4em;
+}
+
+h1, h2 {
+  font-family: YouthAndBeauty, cursive;
+  color: rgb(136, 165, 196);
+}
+
+.blue {
+  color: rgb(136, 165, 196);
+}
+
+.carousel:focus {
+  outline-style:none;
+  box-shadow:none;
 }

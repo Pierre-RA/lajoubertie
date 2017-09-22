@@ -1,17 +1,30 @@
 {
   "title": "La Joubertie",
-  "menu": {
-    "cottage": "cottages",
-    "rooms": "rooms",
-    "contact": "contact"
-  },
-  "cottageSection": {
-    "title": "Our cottages"
-  },
-  "roomSection": {
-    "title": "Our rooms"
-  },
-  "contactSection": {
-    "title": "Contact"
-  }
+  "lodges": "lodges",
+  "rooms": "rooms",
+  "contact": "contact",
+  "Nos gîtes": "Our lodges",
+  "Nos chambres": "Our rooms",
+  "Contact": "Contact",
+  "Régine et Olivier": "Régine and Olivier",
+  "vous accueillent": "welcome you",
+  "au cœur du Périgord": "in the heart of Périgord",
+  "Les gîtes de": "Lodges of",
+  "ouvrent": "are open",
+  "dès le 1er juillet 2017": "since the 1<sup>st</sup> July 2017",
+  "Erreur 404": "Error 404",
+  "La page demandée n'existe pas": "Sorry, this page has not been found.",
+  "personnes": "people",
+  "chambres": "bedrooms",
+  "salles de bains": "bathroom",
+  "Réservations": "Reservations",
+  "Adresse": "Address",
+  "Lieu": "Site",
+  "Gîte 4 personnes": "4 person lodge",
+  "Gîte 2 personnes": "2 person lodge",
+  "Table d'hôtes proposée le soir du lundi au vendredi": "Restaurant service monday to friday, evening only",
+  "chiens admis": "dogs allowed",
+  "Parc de 1,5 hectares": "1.5 hectare parc",
+  "Piscine sécurisée": "Secure swimming pool",
+  "Barbecue": "Barbecue grills"
 }
