@@ -1,8 +1,18 @@
 <h1>{{'Nos chambres' | translate}}</h1>
 
-<div class="row lodge mt-3">
+<div class="row lodge my-5">
   <div class="col-sm-5 rm-g">
-    <img src="assets/img/beds.jpg" class="thumb" alt="" title="" />
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <img src="assets/img/bedroom.jpg" alt="Random third slide" class="thumb" />
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="assets/img/breakfast.jpg" alt="Random second slide" class="thumb" />
+      </ng-template>
+      <ng-template ngbSlide>
+        <img src="assets/img/side-house.jpg" alt="Random second slide" class="thumb" />
+      </ng-template>
+    </ngb-carousel>
   </div>
   <div class="col-sm-2 hr-right">
     <div class="blue">

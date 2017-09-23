@@ -1,19 +1,23 @@
 .extra-plus-size {
-  font-size: 3em;
+  font-size: 3.4em;
   margin-bottom: 0;
 }
 
 .plus-size {
-  font-size: 1.6em;
+  font-size: 2em;
 }
 
-.fancy {
-  font-variant: normal;
-  font-family: YouthAndBeauty, cursive;
+.domain-title {
+  position: relative;
+  height: 45vh;
 }
 
-section#title {
-  color: white;
+.domain-title {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  background-image: url('/assets/img/joubertie_orange.jpg');
+  background-size: cover;
 }
 
 .contained-title-img img {
@@ -38,4 +42,19 @@ section#title {
 section > h1 {
   font-variant: small-caps;
   text-align: center;
+}
+
+.capped {
+  width: 100%;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+
+hr {
+  width: 250px;
+  margin: 0 auto;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: rgb(136, 165, 196) solid 2px;
+  box-shadow: 1px 1px 4px rgba(36,65,96,0.2);
 }

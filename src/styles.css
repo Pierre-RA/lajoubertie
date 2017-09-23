@@ -27,7 +27,38 @@ h1, h2 {
   color: rgb(136, 165, 196);
 }
 
+.white {
+  color: white;
+}
+
+.shadow-black {
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+
 .carousel:focus {
   outline-style:none;
   box-shadow:none;
+}
+
+.fancy {
+  font-variant: normal;
+  font-family: YouthAndBeauty, cursive;
+}
+
+.v-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.v-align-third {
+  position: relative;
+  top: 66%;
+  transform: translateY(-66%);
+}
+
+.v-align-quarter {
+  position: relative;
+  top: 75%;
+  transform: translateY(-75%);
 }

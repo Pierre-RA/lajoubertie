@@ -2,25 +2,103 @@
   <img src="assets/img/logo.png" title="{{'title' | translate}}" alt="{{'title' | translate}}" />
 </section>
 
-<section>
-  <p class="blue extra-plus-size fancy text-center">
-    {{'Régine et Olivier' | translate}}
-  </p>
-
-  <p class="blue plus-size text-center fancy">
-    {{'vous accueillent' | translate}}<br />
-    {{'au cœur du Périgord' | translate}}
-  </p>
+<section class="domain-title my-5">
+  <div class="v-align-quarter shadow-black white fancy">
+    <p class="extra-plus-size text-center">
+      {{'Régine et Olivier' | translate}}
+    </p>
+    <p class="plus-size text-center">
+      {{'vous accueillent' | translate}}<br />
+      {{'au cœur du Périgord' | translate}}
+    </p>
+  </div>
 </section>
 
-<ngb-carousel>
-  <ng-template ngbSlide>
-    <img src="assets/img/joubertie_orange.jpg" alt="Random second slide" class="img-rounded" />
-  </ng-template>
-  <ng-template ngbSlide>
-    <img src="assets/img/house.jpg" alt="Random second slide" class="img-rounded" />
-  </ng-template>
-  <ng-template ngbSlide>
-    <img src="assets/img/beds.jpg" alt="Random third slide" class="img-rounded" />
-</ng-template>
-</ngb-carousel>
+<hr />
+
+<section class="my-5">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2 class="text-center mb-3">{{'Lieu' | translate}}</h2>
+      <p class="text-center">
+        {{'Parc de 1,5 hectares' | translate}}<br />
+        {{'Piscine sécurisée' | translate}}<br />
+        {{'Barbecue' | translate}}
+      </p>
+
+      <p class="text-center">
+        <i class="fa fa-fw fa-lg fa-cutlery blue" aria-hidden="true"></i><br />
+        {{'Table d\'hôtes proposée le soir du lundi au vendredi' | translate}}
+      </p>
+
+      <p class="text-center">
+        <i class="fa fa-fw fa-lg fa-paw blue" aria-hidden="true"></i><br />
+        {{'Chiens admis' | translate}}
+      </p>
+    </div>
+    <div class="col-sm-6">
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <img src="assets/img/domain.jpg" alt="Random second slide" class="capped" />
+          <div class="carousel-caption">
+            <h3>{{'Parc de 1,5 hectares' | translate}}</h3>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="assets/img/swimming-pool.jpg" alt="Random second slide" class="capped" />
+          <div class="carousel-caption">
+            <h3>{{'Piscine sécurisée' | translate}}</h3>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="assets/img/barbecue.jpg" alt="Random third slide" class="capped" />
+          <div class="carousel-caption">
+            <h3>{{'Barbecue' | translate}}</h3>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</section>
+
+<hr />
+
+<section class="my-5">
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="assets/img/map.png" class="capped" />
+    </div>
+    <div class="col-sm-6">
+      <h2 class="text-center mb-3">{{'Accès' | translate}}</h2>
+      <p class="text-center">
+        La Joubertie est au cœeur du Périgord
+      </p>
+
+      <p class="text-center">
+        <i class="fa fa-fw fa-lg fa-car blue" aria-hidden="true"></i><br />
+        45 min de Lascaux<br />
+        35 min de Les Eyziés<br />
+        1h35 de Bordeaux<br />
+      </p>
+
+      <p class="text-center">
+        <i class="fa fa-fw fa-lg fa-plane blue" aria-hidden="true"></i><br />
+        1h35 de l'aéroport de Bordeaux-Mérignac<br />
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="mt-5">
+  <ngb-carousel>
+    <ng-template ngbSlide>
+      <img src="assets/img/joubertie_orange.jpg" alt="Random second slide" class="img-rounded" />
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="assets/img/house.jpg" alt="Random second slide" class="img-rounded" />
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="assets/img/beds.jpg" alt="Random third slide" class="img-rounded" />
+    </ng-template>
+  </ngb-carousel>
+</section>
