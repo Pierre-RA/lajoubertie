@@ -6,6 +6,8 @@ const routes: Routes = [
   { path: 'contact', loadChildren: 'app/pages/contact/contact.module#ContactModule', pathMatch: 'full' },
   { path: 'rooms', loadChildren: 'app/pages/rooms/rooms.module#RoomsModule', pathMatch: 'full' },
   { path: 'lodges', loadChildren: 'app/pages/lodges/lodges.module#LodgesModule', pathMatch: 'full' },
+  { path: 'gallery', loadChildren: 'app/pages/gallery/gallery.module#GalleryModule', pathMatch: 'full'},
+  { path: 'alternative', loadChildren: 'app/pages/welcome-alt/welcome-alt.module#WelcomeAltModule', pathMatch: 'full'},
   { path: 'not-found', loadChildren: 'app/pages/notfound/notfound.module#NotFoundModule' },
   { path: '**', redirectTo: 'not-found'}
 ];

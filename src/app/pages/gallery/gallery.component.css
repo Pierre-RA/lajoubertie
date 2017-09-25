@@ -1,0 +1,7 @@
+.gallery {
+  height: 100%;
+}
+.gallery img {
+  width: 100%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}

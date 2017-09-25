@@ -71,20 +71,33 @@
     <div class="col-sm-5">
       <h2 class="text-center mb-3">{{'Accès' | translate}}</h2>
       <p class="text-center">
-        La Joubertie est au cœeur du Périgord
+        {{'title' | translate}},
+        {{'au cœur du Périgord' | translate}}
       </p>
 
       <p class="text-center">
         <i class="fa fa-fw fa-lg fa-car blue" aria-hidden="true"></i><br />
-        45 min de Lascaux<br />
-        35 min de Les Eyziés<br />
-        1h35 de Bordeaux<br />
+        45 min {{'de' | translate}} Lascaux<br />
+        35 min {{'de' | translate}} Les Eyzies<br />
+        1h35 {{'de' | translate}} Bordeaux<br />
       </p>
 
       <p class="text-center">
         <i class="fa fa-fw fa-lg fa-plane blue" aria-hidden="true"></i><br />
-        1h35 de l'aéroport de Bordeaux-Mérignac<br />
+        1h35 {{'de' | translate}} {{'l\'aéroport de Bordeaux-Mérignac' | translate}}<br />
       </p>
     </div>
   </div>
+</section>
+
+<section>
+  <agm-map [latitude]="centre.lat" [longitude]="centre.lng" [zoom]="centre.zoom">
+    <agm-marker [latitude]="marker.lat" [longitude]="marker.lng" [iconUrl]="marker.url" *ngFor="let marker of mapsData">
+      <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+      <ng-template>
+        {{marker.title}}
+      </ng-template>
+    </agm-snazzy-info-window>
+    </agm-marker>
+  </agm-map>
 </section>

@@ -20,4 +20,12 @@ export class Picture {
   getTitle(): string {
     return this.title;
   }
+
+  getGallery(): Object {
+    return {
+      small: this.url,
+      medium: this.url,
+      big: this.url
+    };
+  }
 }

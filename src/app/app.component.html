@@ -23,6 +23,11 @@
             </a>
           </li>
           <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link" [routerLink]="['/gallery']" (click)="navbarCollapsed = true">
+              {{'gallerie' | translate}}
+            </a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['active']">
             <a class="nav-link" [routerLink]="['/contact']" (click)="navbarCollapsed = true">
               {{'contact' | translate}}
             </a>
@@ -43,7 +48,7 @@
 
     <router-outlet></router-outlet>
 
-    <footer class="mt-5">
+    <footer class="mt-5 mb-0 pb-1">
       <hr />
       <div class="row">
         <div class="col-sm-4 text-center">
@@ -61,7 +66,21 @@
           <a href="mailto:lajoubertie@outlook.com">lajoubertie@outlook.com</a>
         </div>
       </div>
-      <p class="text-center mt-3">
+      <p class="text-center mt-3 mb-0">
+        <a href="#" class="blue" title="Facebook"><span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+        </span></a>
+        <a href="#" class="blue" title="Facebook"><span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span></a>
+        <a href="#" class="blue" title="Facebook"><span class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+        </span></a>
+      </p>
+      <p class="text-center mt-1 mb-0">
         ©{{year}} {{'title' | translate}}
       </p>
     </footer>

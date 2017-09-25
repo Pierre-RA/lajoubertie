@@ -5,7 +5,11 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AgmCoreModule } from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { NgxGalleryModule } from 'ngx-gallery';
 
+import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { Wpng2RoutingModule } from './app-routing.module';
@@ -26,6 +30,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     HttpClientModule,
     Wpng2RoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.mapsAPI
+    }),
+    AgmSnazzyInfoWindowModule,
     NgbModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
@@ -33,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    NgxGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

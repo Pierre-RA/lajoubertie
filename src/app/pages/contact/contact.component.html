@@ -1,11 +1,50 @@
 <h1>Contact</h1>
 
-<p class="upper mt-5">
-  Lieu dit La Joubertie &nbsp; 24 380 Salon
-</p>
+<section class="row justify-content-center">
+  <div class="col-sm-8">
+    <h2>{{'title' | translate}}</h2>
+    <p>
+      Lieu dit La Joubertie<br />
+      <span class="number">24380</span> Salon<br />
+      France
+    </p>
+  </div>
+</section>
 
-<p class="upper mt-3">
-  Coordonnées GPS<br />
-  45°02'03.21 N<br />
-  0°48'30.72 E
-</p>
+<section class="row justify-content-center">
+  <form class="col-sm-8" [formGroup]="form">
+    <h2>Réserver ou connaître les disponibilités</h2>
+    <div class="input-group my-1"
+      [ngClass]="{
+      'has-warning': !form.controls['name'].valid,
+      'has-success': form.controls['name'].valid}">
+      <input class="form-control mt-1"
+        type="name"
+        placeholder="{{ 'nom' | translate }}"
+        formControlName="name"
+        [ngClass]="{'has-success': form.controls['name'].valid}"
+        autofocus />
+    </div>
+    <div class="input-group my-1"
+      [ngClass]="{
+      'has-warning': !form.controls['email'].valid,
+      'has-success': form.controls['email'].valid}">
+      <input class="form-control mt-1"
+        type="email"
+        placeholder="{{ 'email' | translate }}"
+        formControlName="email"
+        [ngClass]="{'has-success': form.controls['email'].valid}"
+        autofocus />
+    </div>
+    <input class="form-control mt-1"
+      type="phone"
+      placeholder="{{ 'phone' | translate }}"
+      formControlName="phone" />
+    <textarea class="form-control mt-1"
+      placeholder="{{ 'message' | translate }}"
+      formControlName="name"></textarea>
+    <button type="submit" class="btn btn-primary my-1" [disabled]="!form.valid">
+      Envoyer
+    </button>
+  </form>
+</section>
