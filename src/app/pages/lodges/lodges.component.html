@@ -1,97 +1,43 @@
 <h1>{{'Nos gîtes' | translate}}</h1>
 
-<div class="row lodge my-5">
+<div class="row lodge my-5" *ngFor="let lodge of lodges">
   <div class="col-sm-5 rm-g">
     <ngb-carousel>
-      <ng-template ngbSlide>
-        <img src="assets/img/beds.jpg" alt="Random third slide" class="thumb" />
-      </ng-template>
-      <ng-template ngbSlide>
-        <img src="assets/img/bathroom.jpg" alt="Random second slide" class="thumb" />
-      </ng-template>
-      <ng-template ngbSlide>
-        <img src="assets/img/terrasse.jpg" alt="Random second slide" class="thumb" />
+      <ng-template ngbSlide *ngFor="let picture of lodge.getPictures()">
+        <img src="assets/img/{{picture.getURL()}}" [alt]="picture.getAlt()" class="thumb" />
       </ng-template>
     </ngb-carousel>
   </div>
   <div class="col-sm-2 hr-right">
     <div class="blue">
       <div class="info">
-        4
+        {{lodge.getPeople()}}
         <i class="fa fa-fw fa-user" aria-hidden="true"></i>
       </div>
-      <div class="text-center">{{'personnes' | translate}}</div>
+      <div class="text-center">{{'personnes' | translate:lodge.getPeopleSuffix()}}</div>
     </div>
     <div class="blue">
       <div class="info">
-        2
+        {{lodge.getRooms()}}
         <i class="fa fa-fw fa-bed" aria-hidden="true"></i>
       </div>
-      <div class="text-center">{{'chambres' | translate}}</div>
+      <div class="text-center">{{'chambres' | translate:lodge.getRoomsSuffix()}}</div>
     </div>
     <div class="blue">
       <div class="info">
-        2
+        {{lodge.getBathrooms()}}
         <i class="fa fa-fw fa-bath" aria-hidden="true"></i>
       </div>
-      <div class="text-center">{{'salles de bains' | translate}}</div>
+      <div class="text-center">{{'salles de bains' | translate:lodge.getBathroomsSuffix()}}</div>
     </div>
   </div>
   <div class="col-sm-5">
-    <h2>{{'Gîte 4 personnes' | translate}}</h2>
+    <h2>{{lodge.getTitle() | translate}}</h2>
     <p>
-      2 chambres avec : 2 salles de bains et WC, cuisine équipée, séjour, TV, terrasse
+      {{lodge.getDescription() | translate}}
     </p>
     <div class="price">
-      770€ / 7 nuits
-    </div>
-  </div>
-</div>
-
-<div class="row lodge my-5">
-  <div class="col-sm-5 rm-g">
-    <ngb-carousel>
-      <ng-template ngbSlide>
-        <img src="assets/img/bedroom-large.jpg" alt="Random third slide" class="thumb" />
-      </ng-template>
-      <ng-template ngbSlide>
-        <img src="assets/img/back-house.jpg" alt="Random second slide" class="thumb" />
-      </ng-template>
-      <ng-template ngbSlide>
-        <img src="assets/img/houses.jpg" alt="Random second slide" class="thumb" />
-      </ng-template>
-    </ngb-carousel>
-  </div>
-  <div class="col-sm-2 hr-right">
-    <div class="blue">
-      <div class="info">
-        2
-        <i class="fa fa-fw fa-user" aria-hidden="true"></i>
-      </div>
-      <div class="text-center">{{'personnes' | translate}}</div>
-    </div>
-    <div class="blue">
-      <div class="info">
-        1
-        <i class="fa fa-fw fa-bed" aria-hidden="true"></i>
-      </div>
-      <div class="text-center">{{'chambres' | translate}}</div>
-    </div>
-    <div class="blue">
-      <div class="info">
-        1
-        <i class="fa fa-fw fa-bath" aria-hidden="true"></i>
-      </div>
-      <div class="text-center">{{'salles de bains' | translate}}</div>
-    </div>
-  </div>
-  <div class="col-sm-5">
-    <h2>{{'Gîte 2 personnes' | translate}}</h2>
-    <p>
-      1 chambre avec : 1 salle de bains et WC, cuisine équipée, séjour, TV, terrasse
-    </p>
-    <div class="price">
-      550€ / 7 nuits
+      {{lodge.getPrice().getValue()}}€ / {{'nuits' | translate:lodge.getPrice().getNightsSuffix()}}
     </div>
   </div>
 </div>

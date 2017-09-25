@@ -11,7 +11,7 @@ export class WelcomeComponent implements OnInit {
   constructor(
     private ngbCarouselConfig: NgbCarouselConfig
   ) {
-    this.ngbCarouselConfig.interval = 2000;
+    this.ngbCarouselConfig.interval = 0;
   }
 
   ngOnInit() {

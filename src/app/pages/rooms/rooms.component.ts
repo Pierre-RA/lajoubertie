@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Room, Price, Picture } from '../../shared/room';
 
 @Component({
   selector: 'app-rooms',
@@ -7,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomsComponent implements OnInit {
 
-  constructor() { }
+  rooms: Array<Room>;
+
+  constructor() {
+    this.rooms = [];
+    this.rooms.push(new Room(
+      2, 1, 1,
+      'Chambre d\'hôtes',
+      'lodge1',
+      new Price(50,1),
+      [new Picture('bedroom.jpg', ''), new Picture('breakfast.jpg', ''), new Picture('side-house.jpg', '')]
+    ));
+  }
 
   ngOnInit() {
   }
