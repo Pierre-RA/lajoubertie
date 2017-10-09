@@ -15,8 +15,8 @@ export class RoomsComponent implements OnInit {
     this.rooms = [];
     this.rooms.push(new Room(
       2, 1, 1,
-      'Chambre d\'hôtes',
-      'lodge1',
+      [],
+      [],
       new Price(50,1),
       [new Picture('bedroom.jpg', ''), new Picture('breakfast.jpg', ''), new Picture('side-house.jpg', '')]
     ));

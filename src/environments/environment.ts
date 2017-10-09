@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
   year: '2017',
-  wpBase: '//localhost/wp-json/wp/v2/',
+  wpBase: '//vccw.test/wp-json/wp/v2/',
   mapsAPI: 'AIzaSyDN9hHVdB9-tEN4URIyrNsIGspS4lV7oxU'
 };

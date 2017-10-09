@@ -4,6 +4,8 @@ import { LodgesComponent } from './lodges.component';
 import { routing } from './lodges.routing';
 import { TranslateModule } from "@ngx-translate/core";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PostsService } from '../../posts/posts.service';
+import { MediaService } from '../../media/media.service';
 
 @NgModule({
   imports: [
@@ -12,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TranslateModule,
     NgbModule
   ],
-  declarations: [LodgesComponent]
+  declarations: [LodgesComponent],
+  providers: [PostsService, MediaService]
 })
 export class LodgesModule { }

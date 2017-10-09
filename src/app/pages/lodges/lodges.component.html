@@ -4,7 +4,7 @@
   <div class="col-sm-5 rm-g">
     <ngb-carousel>
       <ng-template ngbSlide *ngFor="let picture of lodge.getPictures()">
-        <img src="assets/img/{{picture.getURL()}}" [alt]="picture.getAlt()" class="thumb" />
+        <img src="{{picture.getURL()}}" [alt]="picture.getAlt()" class="thumb" />
       </ng-template>
     </ngb-carousel>
   </div>
@@ -32,10 +32,8 @@
     </div>
   </div>
   <div class="col-sm-5">
-    <h2>{{lodge.getTitle() | translate}}</h2>
-    <p>
-      {{lodge.getDescription() | translate}}
-    </p>
+    <h2>{{lodge.getTitle(lang)}}</h2>
+    <div [innerHTML]="lodge.getDescription(lang)">
     <div class="price">
       {{lodge.getPrice().getValue()}}€ / {{'nuits' | translate:lodge.getPrice().getNightsSuffix()}}
     </div>

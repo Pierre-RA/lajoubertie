@@ -11,9 +11,7 @@ import { NgxGalleryModule } from 'ngx-gallery';
 
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { PostListComponent } from './posts/post-list/post-list.component';
 import { Wpng2RoutingModule } from './app-routing.module';
-import { PostSingleComponent } from './posts/post-single/post-single.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -21,9 +19,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PostListComponent,
-    PostSingleComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

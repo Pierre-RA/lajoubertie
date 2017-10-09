@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs/Observable';
-import { Post } from './post';
+import { Post } from '../shared';
 import { environment } from '../../environments/environment';
 
 @Injectable()
@@ -12,15 +12,19 @@ export class PostsService {
   constructor(private http: HttpClient) { }
 
   getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(this._wpBase + 'posts');
+  }
 
-      return this.http.get<Post[]>(this._wpBase + 'posts');
+  getLodges(): Observable<Post[]> {
+    return this.http.get<Post[]>(this._wpBase + 'posts?categories=2');
+  }
 
+  getRooms(): Observable<Post[]> {
+    return this.http.get<Post[]>(this._wpBase + 'posts?categories=3');
   }
 
   getPost(slug: string): Observable<Post[]> {
-
-      return this.http.get<Post[]>(this._wpBase + `posts?slug=${slug}`);
-
+    return this.http.get<Post[]>(this._wpBase + `posts?slug=${slug}`);
   }
 
 }
