@@ -20,7 +20,7 @@ export class PostsService {
   }
 
   getRooms(): Observable<Post[]> {
-    return this.http.get<Post[]>(this._wpBase + 'posts?categories=3');
+    return this.http.get<Post[]>(this._wpBase + 'posts?categories=5');
   }
 
   getPost(slug: string): Observable<Post[]> {

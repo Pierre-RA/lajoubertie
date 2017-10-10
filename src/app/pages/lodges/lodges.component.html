@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="col-sm-5">
-    <h2>{{lodge.getTitle(lang)}}</h2>
+    <h2 [innerHTML]="lodge.getTitle(lang)"></h2>
     <div [innerHTML]="lodge.getDescription(lang)">
     <div class="price">
       {{lodge.getPrice().getValue()}}€ / {{'nuits' | translate:lodge.getPrice().getNightsSuffix()}}

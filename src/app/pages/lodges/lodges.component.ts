@@ -29,6 +29,15 @@ export class LodgesComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.setupLodges();
+    this.translateService.onLangChange.subscribe(
+      (event) => {
+        this.lang = event.lang;
+      }
+    );
+  }
+
+  setupLodges(): void {
     this.postsService.getLodges().subscribe(
       (posts: Post[]) => {
         posts.forEach(post => {
@@ -39,23 +48,21 @@ export class LodgesComponent implements OnInit {
             new Price(+post.price, +post.nights),
             []
           ));
-          this.mediaService.getMediaFromCategory(post.mediaCategory).subscribe(
-            (media: Media[]) => {
-              media.forEach(medium => {
-                this.lodges[this.lodges.length - 1].addPicture(new Picture(
-                  medium.guid.rendered,
-                  medium.title.rendered,
-                ));
-              });
-            }
-          );
+          this.setupMedia(post.mediaCategory, this.lodges.length - 1);
         });
       }
     );
+  }
 
-    this.translateService.onLangChange.subscribe(
-      (event) => {
-        this.lang = event.lang;
+  setupMedia(category: string, position: number): void {
+    this.mediaService.getMediaFromCategory(category).subscribe(
+      (media: Media[]) => {
+        media.forEach(medium => {
+          this.lodges[position].addPicture(new Picture(
+            medium.guid.rendered,
+            medium.title.rendered,
+          ));
+        });
       }
     );
   }
