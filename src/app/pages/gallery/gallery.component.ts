@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
 
-import { Picture } from '../../shared/room';
+import { MediaService } from '../../media/media.service';
+import { Picture, Media } from '../../shared';
 
 @Component({
   selector: 'app-gallery',
@@ -10,11 +11,12 @@ import { Picture } from '../../shared/room';
 })
 export class GalleryComponent implements OnInit {
 
-  pictures: Array<Picture>;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
-  constructor() {
+  constructor(
+    private mediaService: MediaService
+  ) {
     this.galleryImages = [];
     this.initPictures();
   }
@@ -40,27 +42,18 @@ export class GalleryComponent implements OnInit {
   }
 
   initPictures(): void {
-    this.galleryImages.push(new Picture('assets/img/back-house.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/barbecue.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/bathroom.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/bedroom-large.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/bedroom.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/beds.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/breakfast.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/domain.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/entrance.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/house_dog.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/house-other-side.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/house.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/houses.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/joubertie_orange.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/living-room-back.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/living-room.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/pool.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/side-house.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/some-room.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/swimming-pool.jpg', '').getGallery());
-    this.galleryImages.push(new Picture('assets/img/terrasse.jpg', '').getGallery());
+    this.mediaService.getAllMedia().subscribe(
+      (media: Media[]) => {
+        media.forEach(medium => {
+          this.galleryImages.push({
+            small: medium.media_details.sizes.medium.source_url,
+            medium: medium.media_details.sizes.medium_large.source_url,
+            big: medium.media_details.sizes.full.source_url,
+            description: medium.description.rendered
+          });
+        });
+      }
+    );
   }
 
 }

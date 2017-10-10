@@ -7,5 +7,10 @@ export const environment = {
   production: false,
   year: '2017',
   wpBase: '//vccw.test/wp-json/wp/v2/',
-  mapsAPI: 'AIzaSyDN9hHVdB9-tEN4URIyrNsIGspS4lV7oxU'
+  mapsAPI: 'AIzaSyDN9hHVdB9-tEN4URIyrNsIGspS4lV7oxU',
+  rootURL: '/',
+  categories: {
+    lodges: 5,
+    rooms: 4
+  }
 };

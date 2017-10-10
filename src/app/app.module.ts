@@ -14,7 +14,11 @@ import { AppComponent } from './app.component';
 import { Wpng2RoutingModule } from './app-routing.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  // return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(
+    http,
+    '.' + environment.rootURL + '/assets/i18n/', '.json'
+  );
 }
 
 @NgModule({

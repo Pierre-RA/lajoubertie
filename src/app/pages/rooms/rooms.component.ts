@@ -47,14 +47,27 @@ export class RoomsComponent implements OnInit {
             new Price(+post.price, +post.nights),
             []
           ));
-          this.setupMedia(post.mediaCategory, this.rooms.length - 1);
+          this.setupAttachedMedia(post.id, this.rooms.length - 1);
         });
       }
     );
   }
 
-  setupMedia(category: string, position: number): void {
+  setupCategorizedMedia(category: string, position: number): void {
     this.mediaService.getMediaFromCategory(category).subscribe(
+      (media: Media[]) => {
+        media.forEach(medium => {
+          this.rooms[position].addPicture(new Picture(
+            medium.guid.rendered,
+            medium.title.rendered,
+          ));
+        });
+      }
+    );
+  }
+
+  setupAttachedMedia(parent: number, position: number): void {
+    this.mediaService.getAttachedMedia(parent).subscribe(
       (media: Media[]) => {
         media.forEach(medium => {
           this.rooms[position].addPicture(new Picture(

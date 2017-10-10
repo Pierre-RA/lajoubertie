@@ -48,14 +48,27 @@ export class LodgesComponent implements OnInit {
             new Price(+post.price, +post.nights),
             []
           ));
-          this.setupMedia(post.mediaCategory, this.lodges.length - 1);
+          this.setupAttachedMedia(post.id, this.lodges.length - 1);
         });
       }
     );
   }
 
-  setupMedia(category: string, position: number): void {
+  setupCategorizedMedia(category: string, position: number): void {
     this.mediaService.getMediaFromCategory(category).subscribe(
+      (media: Media[]) => {
+        media.forEach(medium => {
+          this.lodges[position].addPicture(new Picture(
+            medium.guid.rendered,
+            medium.title.rendered,
+          ));
+        });
+      }
+    );
+  }
+
+  setupAttachedMedia(parent: number, position: number): void {
+    this.mediaService.getAttachedMedia(parent).subscribe(
       (media: Media[]) => {
         media.forEach(medium => {
           this.lodges[position].addPicture(new Picture(

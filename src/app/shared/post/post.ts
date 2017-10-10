@@ -5,6 +5,7 @@ export class Post {
   content: {
     rendered: string;
   };
+  id: number;
   titleEN: string;
   contentEN: string;
   chambres: string;

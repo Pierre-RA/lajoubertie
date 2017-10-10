@@ -15,4 +15,12 @@ export class MediaService {
     return this.http.get<Media[]>(this._wpBase + `media?media_category[]=${category}`);
   }
 
+  getAttachedMedia(parent: number): Observable<Media[]> {
+    return this.http.get<Media[]>(this._wpBase + `media?parent=${parent}`);
+  }
+
+  getAllMedia(): Observable<Media[]> {
+    return this.http.get<Media[]>(this._wpBase + 'media?media_type=image');
+  }
+
 }

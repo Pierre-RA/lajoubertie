@@ -16,11 +16,11 @@ export class PostsService {
   }
 
   getLodges(): Observable<Post[]> {
-    return this.http.get<Post[]>(this._wpBase + 'posts?categories=2');
+    return this.http.get<Post[]>(this._wpBase + 'posts?categories=' + environment.categories.lodges);
   }
 
   getRooms(): Observable<Post[]> {
-    return this.http.get<Post[]>(this._wpBase + 'posts?categories=5');
+    return this.http.get<Post[]>(this._wpBase + 'posts?categories=' + environment.categories.rooms);
   }
 
   getPost(slug: string): Observable<Post[]> {

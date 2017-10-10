@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-welcome',
@@ -10,10 +11,12 @@ export class WelcomeComponent implements OnInit {
 
   mapsData: Array<Marker>;
   centre: Marker;
+  assetsURL: string;
 
   constructor(
     private ngbCarouselConfig: NgbCarouselConfig
   ) {
+    this.assetsURL = environment.rootURL + 'assets';
     this.centre = {
       title: '',
       lat: 45,
@@ -24,7 +27,7 @@ export class WelcomeComponent implements OnInit {
       title: 'La Joubertie',
       lat: 45.0346544,
       lng: 0.8069931,
-      url: '/assets/img/joubertie-icon.png'
+      url: this.assetsURL + '/img/joubertie-icon.png'
     }, {
       title: 'Lascaux',
       lat: 45.0539181,

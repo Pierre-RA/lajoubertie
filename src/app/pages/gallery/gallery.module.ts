@@ -4,6 +4,7 @@ import { GalleryComponent } from './gallery.component';
 import { routing } from './gallery.routing';
 import { TranslateModule } from "@ngx-translate/core";
 import { NgxGalleryModule } from 'ngx-gallery';
+import { MediaService } from '../../media/media.service';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { NgxGalleryModule } from 'ngx-gallery';
     TranslateModule,
     NgxGalleryModule
   ],
-  declarations: [GalleryComponent]
+  declarations: [GalleryComponent],
+  providers: [MediaService]
 })
 export class GalleryModule { }
