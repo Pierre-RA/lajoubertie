@@ -1,0 +1,20 @@
+.posts {
+  border-bottom: solid rgb(136, 165, 196) 1px;
+  padding: 20px;
+}
+
+h2 {
+  color: rgba(0,0,0,0.7);
+  font-family: arial;
+}
+
+.fa-bed,
+.fa-file-text-o {
+  color: rgb(136, 165, 196);
+}
+
+.v-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

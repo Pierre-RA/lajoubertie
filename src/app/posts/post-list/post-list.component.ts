@@ -3,6 +3,7 @@ import { Post } from '../../shared/post';
 import { PostsService } from '../posts.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-post-list',
@@ -26,8 +27,17 @@ export class PostListComponent implements OnInit {
   }
 
   selectPost(slug) {
-    console.log(this.posts);
-  	// this.router.navigate(['/pages', slug]);
+    this.router.navigate(['/posts', slug]);
+  }
+
+  isRoom(categories: Array<number>) {
+    if (categories.indexOf(environment.categories.lodges) != -1) {
+      return true;
+    }
+    if (categories.indexOf(environment.categories.rooms) != -1) {
+      return true;
+    }
+    return false;
   }
 
 }

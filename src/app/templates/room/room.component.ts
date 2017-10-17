@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 import { Room, Price, Picture } from '../../shared/room';
 
@@ -25,6 +26,10 @@ export class RoomComponent implements OnInit {
         this.lang = event.lang;
       }
     );
+  }
+
+  selectPost(slug) {
+    this.router.navigate(['/posts', slug]);
   }
 
 }

@@ -1,5 +1,22 @@
-<ul>
-  <li *ngFor="let post of posts" (click)="selectPost(post.slug)">
-    {{ post.title.rendered }}
-  </li>
-</ul>
+<h1>{{'liste des chambres' | translate}}</h1>
+
+<div class="row justify-content-center">
+  <div class="posts col-md-8 my-3" *ngFor="let post of posts">
+    <div class="row">
+      <div class="col-sm-4">
+        <p *ngIf="!post.image" class="v-align text-center">
+          <i class="fa fa-fw fa-bed fa-4x" *ngIf="isRoom(post.categories)"></i>
+          <i class="fa fa-fw fa-file-text-o fa-4x" *ngIf="!isRoom(post.categories)"></i>
+        </p>
+      </div>
+      <div class="col-sm-8">
+        <h2 [innerHTML]="post.title.rendered"></h2>
+        <div [innerHTML]="post.excerpt.rendered">
+        </div>
+        <button (click)="selectPost(post.slug)" class="btn btn-sm btn-outline-primary">
+          {{ 'en savoir plus' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -34,7 +34,9 @@
   <div class="col-sm-5">
     <h2 [innerHTML]="lodge.getTitle(lang)"></h2>
     <div [innerHTML]="lodge.getExcerpt(lang)"></div>
-    <a [routerLink]="lodge.getSlug()">[en savoir plus]</a>
+    <button (click)="selectPost(lodge.getSlug())" class="btn btn-sm btn-outline-primary">
+      {{ 'en savoir plus' | translate }}
+    </button>
     <div class="price">
       {{lodge.getPrice().getValue()}}€ / {{'nuits' | translate:lodge.getPrice().getNightsSuffix()}}
       <div class="info-price">

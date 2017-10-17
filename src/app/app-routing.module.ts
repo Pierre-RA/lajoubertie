@@ -8,6 +8,8 @@ const routes: Routes = [
   { path: 'lodges', loadChildren: 'app/pages/lodges/lodges.module#LodgesModule', pathMatch: 'full' },
   { path: 'gallery', loadChildren: 'app/pages/gallery/gallery.module#GalleryModule', pathMatch: 'full'},
   { path: 'not-found', loadChildren: 'app/pages/notfound/notfound.module#NotFoundModule' },
+  { path: 'posts', loadChildren: 'app/posts/post-list/post-list.module#PostListModule', pathMatch: 'full'},
+  { path: 'posts/:slug', loadChildren: 'app/posts/post-single/post-single.module#PostSingleModule' },
   { path: '**', redirectTo: 'not-found'}
 ];
 

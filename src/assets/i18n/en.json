@@ -34,10 +34,7 @@
   "nuits": "{{value}}night{{plural}}",
   "de": "from",
   "l'aéroport de Bordeaux-Mérignac": "Bordeaux-Mérignac airport",
-  "Gîte 4 personnes": "4 person lodge",
-  "Gîte 2 personnes": "2 person lodge",
-  "lodge1": "2 bedrooms with : 2 bathrooms and toilet, kitchen, livingroom, TV, terrace",
-  "lodge2": "1 bedroom with : 1 bathroom and toilet, kitchen, livingroom, TV, terrace",
-  "room2": "room : queen size bed, bathroom and toilet, TV",
-  "Chiens admis": "Dogs allowed"
+  "Chiens admis": "Dogs allowed",
+  "liste des chambres": "List of rooms and lodges",
+  "en savoir plus": "Read more"
 }
