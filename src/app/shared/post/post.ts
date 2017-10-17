@@ -5,7 +5,11 @@ export class Post {
   content: {
     rendered: string;
   };
+  excerpt: {
+    rendered: string;
+  }
   id: number;
+  slug: string;
   titleEN: string;
   contentEN: string;
   chambres: string;

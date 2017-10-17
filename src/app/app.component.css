@@ -10,6 +10,11 @@
   box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
 }
 
+@media (max-width: 765px) {
+  .container-white {
+    border-radius: 0;
+  }
+}
 
 header,
 header button {
@@ -24,12 +29,6 @@ header button {
 .navbar-toggler:focus {
   outline-style:none;
   box-shadow:none;
-}
-
-@media(max-width: 575px) {
-  .white {
-    border-radius: 0;
-  }
 }
 
 footer {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateService } from '@ngx-translate/core';
 import { PostsService } from '../../posts/posts.service';
 import { MediaService } from '../../media/media.service';
 import { Post, Media } from '../../shared';
@@ -20,21 +19,14 @@ export class LodgesComponent implements OnInit {
   constructor(
     private ngbCarouselConfig: NgbCarouselConfig,
     private postsService: PostsService,
-    private mediaService: MediaService,
-    private translateService: TranslateService
+    private mediaService: MediaService
   ) {
     this.ngbCarouselConfig.interval = 0;
     this.lodges = [];
-    this.lang = this.translateService.currentLang;
   }
 
   ngOnInit() {
     this.setupLodges();
-    this.translateService.onLangChange.subscribe(
-      (event) => {
-        this.lang = event.lang;
-      }
-    );
   }
 
   setupLodges(): void {
@@ -42,9 +34,11 @@ export class LodgesComponent implements OnInit {
       (posts: Post[]) => {
         posts.forEach(post => {
           this.lodges.push(new Room(
+            post.slug,
             +post.personnes, +post.chambres, +post.sdb,
             [post.titleEN, post.title.rendered],
             [post.contentEN, post.content.rendered],
+            [post.excerpt.rendered, post.excerpt.rendered],
             new Price(+post.price, +post.nights),
             []
           ));

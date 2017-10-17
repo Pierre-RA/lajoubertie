@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prod": "ng build --aot -prod"
+    "prod": "ng build --aot -prod --deploy-url=\"/wp-content/themes/lajoubertie2017/\""
   },
   "private": true,
   "dependencies": {

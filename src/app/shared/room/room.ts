@@ -11,13 +11,19 @@ export class Room {
     en: string,
     fr: string
   };
+  private excerpt: {
+    en: string,
+    fr: string
+  }
 
   constructor(
+    private slug: string,
     private people: number,
     private rooms: number,
     private bathrooms: number,
     title: Array<string>,
     description: Array<string>,
+    excerpt: Array<string>,
     private price: Price,
     private pictures: Array<Picture>
   ) {
@@ -29,6 +35,10 @@ export class Room {
       en: description[0],
       fr: description[1],
     };
+    this.excerpt = {
+      en: excerpt[0],
+      fr: excerpt[1],
+    }
   }
 
   getPeople(): number {
@@ -63,12 +73,20 @@ export class Room {
     return this.description[lang];
   }
 
+  getExcerpt(lang: string): string {
+    return this.excerpt[lang];
+  }
+
   getPrice(): Price {
     return this.price;
   }
 
   getPictures(): Array<Picture> {
     return this.pictures;
+  }
+
+  getSlug(): string {
+    return this.slug;
   }
 
   setPictures(pictures: Array<Picture>): void {

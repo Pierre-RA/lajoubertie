@@ -41,9 +41,11 @@ export class RoomsComponent implements OnInit {
       (posts: Post[]) => {
         posts.forEach(post => {
           this.rooms.push(new Room(
+            post.slug,
             +post.personnes, +post.chambres, +post.sdb,
             [post.titleEN, post.title.rendered],
             [post.contentEN, post.content.rendered],
+            [post.excerpt.rendered, post.excerpt.rendered],
             new Price(+post.price, +post.nights),
             []
           ));

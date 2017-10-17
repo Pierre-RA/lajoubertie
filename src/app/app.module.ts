@@ -17,7 +17,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   // return new TranslateHttpLoader(http);
   return new TranslateHttpLoader(
     http,
-    '.' + environment.rootURL + '/assets/i18n/', '.json'
+    '.' + environment.rootURL + 'assets/i18n/', '.json'
+    // './assets/i18n/', '.json'
   );
 }
 

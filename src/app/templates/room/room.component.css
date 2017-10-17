@@ -32,17 +32,36 @@
   color: rgba(0,0,0,0.6);
 }
 
-.rm-g {
-  padding: 0 !important;
+.info-price {
+  font-size: 0.5em;
+  text-align: center;
+  margin-top: -10px;
+  font-style: italic;
 }
 
-.capped {
-  width: 100%;
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+.rm-g {
+  padding: 0 !important;
 }
 
 .v-align {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+@media (max-width: 764px) {
+  .v-align {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .blue {
+    display: inline-block;
+    margin: 0 14px;
+  }
+  .my-5 {
+    margin-top: 0 !important;
+  }
+  .lodge h2 {
+    text-align: center;
+  }
 }

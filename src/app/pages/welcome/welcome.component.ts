@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '../../../environments/environment';
 
@@ -14,9 +15,14 @@ export class WelcomeComponent implements OnInit {
   assetsURL: string;
 
   constructor(
-    private ngbCarouselConfig: NgbCarouselConfig
+    private ngbCarouselConfig: NgbCarouselConfig,
+    private meta: Meta
   ) {
     this.assetsURL = environment.rootURL + 'assets';
+    this.meta.addTag({ name: 'og:type', content: 'website' });
+    this.meta.addTag({ name: 'og:title', content: 'La Joubertie - Gîtes & Chambres d\'hôtes' });
+    this.meta.addTag({ name: 'og:url', content: 'https://lajoubertie.fr/' });
+    this.meta.addTag({ name: 'og:image', content: this.assetsURL + '/img/joubertie_orange.jpg' });
     this.centre = {
       title: '',
       lat: 45,
