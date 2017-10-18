@@ -1,7 +1,59 @@
-<div *ngIf="!post">
-  no post found
+<div *ngIf="error" class="row justify-content-center my-5">
+  <div class="col-sm-8 alert alert-danger" role="alert" [innerHTML]="'erreur, chambre non trouvée' | translate">
+  </div>
 </div>
-<div *ngIf="post">
-  <h1>{{ post.title.rendered }}</h1>
-  <div [innerHTML]="post.content.rendered"></div>
+
+<div *ngIf="error" class="my-5">
+  <p class="text-center">
+    <a [routerLink]="'/posts'" class="btn btn-sm btn-outline-primary">
+      {{ 'retour' | translate }}
+    </a>
+  </p>
+</div>
+
+<div *ngIf="!room && !error" class="row justify-content-center my-5">
+  <div class="col-sm-8 alert alert-warning" role="alert">
+    {{ 'récupération de la chambre' | translate }}
+  </div>
+</div>
+
+<div *ngIf="room" class="m-3">
+  <h1 [innerHTML]="room.getTitle(lang)"></h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <div [innerHTML]="room.getDescription(lang)"></div>
+    </div>
+    <div class="col-sm-6">
+      <ngb-carousel *ngIf="room.hasPictures()" class="box">
+        <ng-template ngbSlide *ngFor="let picture of room.getPictures()">
+          <img src="{{picture.getMediumURL()}}" [alt]="picture.getAlt()" class="thumb" />
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+
+  <div class="price-box" *ngIf="room.getPrice().getValue() > 0">
+    <div class="by-night-price">
+      {{room.getPrice().getValue()}}€ / {{'nuits' | translate:room.getPrice().getSingularNights()}}
+      <div class="info-price" *ngIf="room.getPrice().getNights() > 1">
+        {{'nuits' | translate:room.getPrice().getNightsSuffix()}} minimum
+      </div>
+    </div>
+
+    <div class="seven-nights-price mt-1" *ngIf="room.getPrice().getWeekPrice() > 0">
+      {{room.getPrice().getWeekPrice()}}€ / {{'semaine' | translate}}
+      <div class="info-price">
+        {{ 'condition semaine' | translate }}
+      </div>
+    </div>
+  </div>
+
+  <div class="info-price right mt-1" *ngIf="room.getPrice().getValue() > 0">
+    {{ 'taxe de séjour' | translate }}
+  </div>
+
+</div>
+
+<div class="text-center mt-5">
+  <button class="btn btn-sm btn-outline-secondary" (click)="clickBack()">Retour</button>
 </div>

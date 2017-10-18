@@ -96,4 +96,8 @@ export class Room {
   addPicture(picture: Picture): void {
     this.pictures.push(picture);
   }
+
+  hasPictures(): boolean {
+    return this.pictures.length > 0;
+  }
 }

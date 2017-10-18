@@ -10,12 +10,27 @@ export class Post {
   }
   id: number;
   slug: string;
-  titleEN: string;
-  contentEN: string;
-  chambres: string;
-  sdb: string;
-  personnes: string;
-  price: string;
-  nights: string;
-  mediaCategory: string;
+  acf: {
+    bathrooms: string;
+    description_EN: string;
+    excerpt_EN: string;
+    minimum_nights: string;
+    people: string;
+    price: string;
+    rooms: string;
+    title_EN: string;
+    week_price: string;
+    image_1: {
+      alt: string;
+      title: string;
+      url: string;
+      sizes: {
+        large: string;
+        'medium_large': string;
+        medium: string;
+        thumbnail: string;
+      };
+    };
+
+  };
 }

@@ -32,9 +32,18 @@
   "phone": "Your phone number",
   "message": "Your question, or request...",
   "nuits": "{{value}}night{{plural}}",
+  "week": "week",
   "de": "from",
   "l'aéroport de Bordeaux-Mérignac": "Bordeaux-Mérignac airport",
   "Chiens admis": "Dogs allowed",
   "liste des chambres": "List of rooms and lodges",
-  "en savoir plus": "Read more"
+  "en savoir plus": "Read more",
+  "erreur, chambre non trouvée": "<b>Error 404 :</b> room not found.",
+  "récupération de la chambre": "Downloading room...",
+  "récupération des gîtes": "Loading lodges...",
+  "récupération des chambres": "Loading rooms...",
+  "retour": "Back to the list of rooms",
+  "retour": "Back",
+  "conditions semaine": "from Saturday 4pm to Saturday up to 12am",
+  "taxe de séjour": "Not included: tourist tax 0.85 cts per person per night"
 }

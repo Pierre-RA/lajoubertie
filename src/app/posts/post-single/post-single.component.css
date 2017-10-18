@@ -1,0 +1,36 @@
+.by-night-price,
+.seven-nights-price {
+  font-size: 2em;
+  color: rgba(0,0,0,0.6);
+  text-align: right;
+}
+
+.info-price {
+  font-size: 0.5em;
+  margin-top: -10px;
+  font-style: italic;
+}
+
+.right {
+  font-size: 1em;
+  text-align: right;
+  color: rgba(0,0,0,0.6);
+  clear: both;
+}
+
+.price-box {
+  border: solid 2px rgb(136, 165, 196);
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 10px;
+  float: right;
+}
+
+.thumb {
+  width: 100%;
+}
+
+.box {
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+}

@@ -15,7 +15,8 @@ export class RoomComponent implements OnInit {
   lang: string;
 
   constructor(
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private router: Router
   ) {
     this.lang = this.translateService.currentLang;
   }

@@ -22,7 +22,6 @@ export class LodgesComponent implements OnInit {
     private mediaService: MediaService
   ) {
     this.ngbCarouselConfig.interval = 0;
-    this.lodges = [];
   }
 
   ngOnInit() {
@@ -32,14 +31,15 @@ export class LodgesComponent implements OnInit {
   setupLodges(): void {
     this.postsService.getLodges().subscribe(
       (posts: Post[]) => {
+        this.lodges = [];
         posts.forEach(post => {
           this.lodges.push(new Room(
             post.slug,
-            +post.personnes, +post.chambres, +post.sdb,
-            [post.titleEN, post.title.rendered],
-            [post.contentEN, post.content.rendered],
-            [post.excerpt.rendered, post.excerpt.rendered],
-            new Price(+post.price, +post.nights),
+            +post.acf.people, +post.acf.rooms, +post.acf.bathrooms,
+            [post.acf.title_EN, post.title.rendered],
+            [post.acf.description_EN, post.content.rendered],
+            [post.acf.excerpt_EN, post.excerpt.rendered],
+            new Price(+post.acf.price, +post.acf.minimum_nights, +post.acf.week_price),
             []
           ));
           this.setupAttachedMedia(post.id, this.lodges.length - 1);
@@ -54,6 +54,8 @@ export class LodgesComponent implements OnInit {
         media.forEach(medium => {
           this.lodges[position].addPicture(new Picture(
             medium.guid.rendered,
+            medium.guid.rendered,
+            medium.guid.rendered,
             medium.title.rendered,
           ));
         });
@@ -66,6 +68,8 @@ export class LodgesComponent implements OnInit {
       (media: Media[]) => {
         media.forEach(medium => {
           this.lodges[position].addPicture(new Picture(
+            medium.guid.rendered,
+            medium.guid.rendered,
             medium.guid.rendered,
             medium.title.rendered,
           ));

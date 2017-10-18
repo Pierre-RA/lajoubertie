@@ -1,3 +1,9 @@
 <h1>{{'Nos chambres' | translate}}</h1>
 
+<div *ngIf="!rooms" class="row justify-content-center my-5">
+  <div class="col-sm-8 alert alert-warning" role="alert">
+    {{ 'récupération des chambres' | translate }}
+  </div>
+</div>
+
 <room [lodge]="room" *ngFor="let room of rooms"></room>

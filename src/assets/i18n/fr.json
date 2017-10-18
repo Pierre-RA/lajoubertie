@@ -32,9 +32,18 @@
   "phone": "Votre téléphone",
   "message": "Votre question, ou requête...",
   "nuits": "{{value}}nuit{{plural}}",
+  "week": "semaine",
   "de": "de",
   "l'aéroport de Bordeaux-Mérignac": "l'aéroport de Bordeaux-Mérignac",
   "Chiens admis": "Chiens admis",
   "liste des chambres": "Liste des chambres et gîtes",
-  "en savoir plus": "en savoir plus"
+  "en savoir plus": "en savoir plus",
+  "erreur, chambre non trouvée": "<b>Erreur 404 :</b> chambre non trouvée.",
+  "récupération de la chambre": "Chambre en cours téléchargement...",
+  "récupération des gîtes": "Récupération des gîtes...",
+  "récupération des chambres": "Récupération des chambres...",
+  "retour": "Retour à la liste des chambres",
+  "retour": "Retour",
+  "conditions semaine": "du samedi dès 16h00 au samedi jusqu’à 12h00",
+  "taxe de séjour": "Taxe de séjour en supplément : 0.85 cts par personne et par nuit"
 }

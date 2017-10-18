@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Room, Price, Picture } from '../../shared/room';
-import { TranslateService } from '@ngx-translate/core';
 import { PostsService } from '../../posts/posts.service';
 import { MediaService } from '../../media/media.service';
 import { Post, Media } from '../../shared';
@@ -19,34 +18,27 @@ export class RoomsComponent implements OnInit {
   constructor(
     private ngbCarouselConfig: NgbCarouselConfig,
     private postsService: PostsService,
-    private mediaService: MediaService,
-    private translateService: TranslateService
+    private mediaService: MediaService
   ) {
     this.ngbCarouselConfig.interval = 0;
-    this.rooms = [];
-    this.lang = this.translateService.currentLang;
   }
 
   ngOnInit() {
     this.setupRooms();
-    this.translateService.onLangChange.subscribe(
-      (event) => {
-        this.lang = event.lang;
-      }
-    );
   }
 
   setupRooms(): void {
     this.postsService.getRooms().subscribe(
       (posts: Post[]) => {
+        this.rooms = [];
         posts.forEach(post => {
           this.rooms.push(new Room(
             post.slug,
-            +post.personnes, +post.chambres, +post.sdb,
-            [post.titleEN, post.title.rendered],
-            [post.contentEN, post.content.rendered],
-            [post.excerpt.rendered, post.excerpt.rendered],
-            new Price(+post.price, +post.nights),
+            +post.acf.people, +post.acf.rooms, +post.acf.bathrooms,
+            [post.acf.title_EN, post.title.rendered],
+            [post.acf.description_EN, post.content.rendered],
+            [post.acf.excerpt_EN, post.excerpt.rendered],
+            new Price(+post.acf.price, +post.acf.minimum_nights, +post.acf.week_price),
             []
           ));
           this.setupAttachedMedia(post.id, this.rooms.length - 1);
@@ -61,6 +53,8 @@ export class RoomsComponent implements OnInit {
         media.forEach(medium => {
           this.rooms[position].addPicture(new Picture(
             medium.guid.rendered,
+            medium.guid.rendered,
+            medium.guid.rendered,
             medium.title.rendered,
           ));
         });
@@ -73,6 +67,8 @@ export class RoomsComponent implements OnInit {
       (media: Media[]) => {
         media.forEach(medium => {
           this.rooms[position].addPicture(new Picture(
+            medium.guid.rendered,
+            medium.guid.rendered,
             medium.guid.rendered,
             medium.title.rendered,
           ));

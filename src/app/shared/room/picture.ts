@@ -1,6 +1,8 @@
 export class Picture {
   constructor(
-    private url: string,
+    private small: string,
+    private medium: string,
+    private large: string,
     private alt: string,
     private title?: string
   ) {
@@ -9,8 +11,16 @@ export class Picture {
     }
   }
 
-  getURL(): string {
-    return this.url;
+  getSmallURL(): string {
+    return this.small;
+  }
+
+  getMediumURL(): string {
+    return this.medium;
+  }
+
+  getLargeURL(): string {
+    return this.large;
   }
 
   getAlt(): string {
@@ -23,9 +33,9 @@ export class Picture {
 
   getGallery(): Object {
     return {
-      small: this.url,
-      medium: this.url,
-      big: this.url
+      small: this.small,
+      medium: this.medium,
+      big: this.large
     };
   }
 }
