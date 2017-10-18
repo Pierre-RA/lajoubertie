@@ -41,40 +41,24 @@ export class RoomsComponent implements OnInit {
             new Price(+post.acf.price, +post.acf.minimum_nights, +post.acf.week_price),
             []
           ));
-          this.setupAttachedMedia(post.id, this.rooms.length - 1);
+          this.setupAttachedMedia(post, this.rooms.length - 1);
         });
       }
     );
   }
 
-  setupCategorizedMedia(category: string, position: number): void {
-    this.mediaService.getMediaFromCategory(category).subscribe(
-      (media: Media[]) => {
-        media.forEach(medium => {
-          this.rooms[position].addPicture(new Picture(
-            medium.guid.rendered,
-            medium.guid.rendered,
-            medium.guid.rendered,
-            medium.title.rendered,
-          ));
-        });
+  setupAttachedMedia(post: Post, position: number): void {
+    for (let i = 1; i < 5; i++) {
+      if (post.acf['image_' + i]) {
+        this.rooms[position].addPicture(new Picture(
+          post.acf['image_' + i].sizes.thumbnail,
+          post.acf['image_' + i].sizes.large,
+          post.acf['image_' + i].url,
+          post.acf['image_' + i].alt,
+          post.acf['image_' + i].title
+        ));
       }
-    );
-  }
-
-  setupAttachedMedia(parent: number, position: number): void {
-    this.mediaService.getAttachedMedia(parent).subscribe(
-      (media: Media[]) => {
-        media.forEach(medium => {
-          this.rooms[position].addPicture(new Picture(
-            medium.guid.rendered,
-            medium.guid.rendered,
-            medium.guid.rendered,
-            medium.title.rendered,
-          ));
-        });
-      }
-    );
+    }
   }
 
 }
