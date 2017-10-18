@@ -64,4 +64,8 @@
   .lodge h2 {
     text-align: center;
   }
+  .price {
+    position: relative;
+    float: right;
+  }
 }
