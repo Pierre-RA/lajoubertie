@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'not-found', loadChildren: 'app/pages/notfound/notfound.module#NotFoundModule' },
   { path: 'posts', loadChildren: 'app/posts/post-list/post-list.module#PostListModule', pathMatch: 'full'},
   { path: 'posts/:slug', loadChildren: 'app/posts/post-single/post-single.module#PostSingleModule' },
-  { path: '**', redirectTo: 'not-found'}
+  { path: ':slug', redirectTo: 'posts/:slug'}
 ];
 
 @NgModule({
