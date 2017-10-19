@@ -3,11 +3,7 @@
     <div *ngIf="!lodge.hasPictures()" class="v-align text-center">
       <i class="fa fa-picture-o fa-5x blue" aria-hidden="true"></i>
     </div>
-    <ngb-carousel *ngIf="lodge.hasPictures()">
-      <ng-template ngbSlide *ngFor="let picture of lodge.getPictures()">
-        <img src="{{picture.getMediumURL()}}" [alt]="picture.getAlt()" class="thumb" />
-      </ng-template>
-    </ngb-carousel>
+    <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
   </div>
   <div class="col-sm-2 hr-right">
     <div class="v-align">

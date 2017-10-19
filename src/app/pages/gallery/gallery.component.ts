@@ -26,6 +26,7 @@ export class GalleryComponent implements OnInit {
       width: '100%',
       height: '60vh',
       thumbnailsColumns: 4,
+      previewDescription: false,
       imageAnimation: NgxGalleryAnimation.Slide
     }, {
       breakpoint: 800,
@@ -46,10 +47,9 @@ export class GalleryComponent implements OnInit {
       (media: Media[]) => {
         media.forEach(medium => {
           this.galleryImages.push({
-            small: medium.media_details.sizes.medium.source_url,
-            medium: medium.media_details.sizes.medium_large.source_url,
-            big: medium.media_details.sizes.full.source_url,
-            description: medium.description.rendered
+            small: medium.media_details.sizes.medium_large.source_url,
+            medium: medium.media_details.sizes.full.source_url,
+            big: medium.media_details.sizes.full.source_url
           });
         });
       }
