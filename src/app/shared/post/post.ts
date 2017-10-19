@@ -7,7 +7,8 @@ export class Post {
   };
   excerpt: {
     rendered: string;
-  }
+  };
+  categories: Array<number>;
   id: number;
   slug: string;
   acf: {

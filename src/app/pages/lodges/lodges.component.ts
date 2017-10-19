@@ -34,7 +34,7 @@ export class LodgesComponent implements OnInit {
         this.lodges = [];
         posts.forEach(post => {
           this.lodges.push(new Room(
-            post.slug,
+            post.slug, post.categories,
             +post.acf.people, +post.acf.rooms, +post.acf.bathrooms,
             [post.acf.title_EN, post.title.rendered],
             [post.acf.description_EN, post.content.rendered],

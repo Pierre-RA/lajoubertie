@@ -44,6 +44,7 @@
   "récupération des chambres": "Récupération des chambres...",
   "retour": "Retour à la liste des chambres",
   "retour": "Retour",
-  "conditions semaine": "du samedi dès 16h00 au samedi jusqu’à 12h00",
-  "taxe de séjour": "Taxe de séjour en supplément : 0.85 cts par personne et par nuit"
+  "condition semaine": "du samedi dès 16h00 au samedi jusqu’à 12h00",
+  "taxe de séjour": "Taxe de séjour en supplément : 0.85 cts par personne et par nuit",
+  "petit déjeuner compris": "petit déjeuner compris"
 }

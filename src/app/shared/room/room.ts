@@ -1,6 +1,7 @@
 import { Price } from './price';
 import { Picture } from './picture';
 import { Post } from '../post/post';
+import { environment } from '../../../environments/environment';
 
 export class Room {
   private title: {
@@ -18,6 +19,7 @@ export class Room {
 
   constructor(
     private slug: string,
+    private categories: Array<number>,
     private people: number,
     private rooms: number,
     private bathrooms: number,
@@ -99,5 +101,9 @@ export class Room {
 
   hasPictures(): boolean {
     return this.pictures.length > 0;
+  }
+
+  isLodge(): boolean {
+    return this.categories.indexOf(environment.categories.lodges) > -1;
   }
 }

@@ -41,6 +41,9 @@
       <div class="info-price" *ngIf="lodge.getPrice().getNights() > 1">
         {{'nuits' | translate:lodge.getPrice().getNightsSuffix()}} minimum
       </div>
+      <div class="info-price" *ngIf="!lodge.isLodge()">
+        {{ 'petit déjeuner compris' | translate }}
+      </div>
     </div>
   </div>
 </div>

@@ -41,7 +41,7 @@ export class PostSingleComponent implements OnInit {
     .subscribe(
       (post: Post[]) => {
         this.room = new Room(
-          post[0].slug,
+          post[0].slug, post[0].categories,
           +post[0].acf.people, +post[0].acf.rooms, +post[0].acf.bathrooms,
           [post[0].acf.title_EN, post[0].title.rendered],
           [post[0].acf.description_EN, post[0].content.rendered],

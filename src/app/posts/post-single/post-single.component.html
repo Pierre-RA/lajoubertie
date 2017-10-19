@@ -38,6 +38,9 @@
       <div class="info-price" *ngIf="room.getPrice().getNights() > 1">
         {{'nuits' | translate:room.getPrice().getNightsSuffix()}} minimum
       </div>
+      <div class="info-price" *ngIf="!lodge.isLodge()">
+        {{ 'petit déjeuner compris' | translate }}
+      </div>
     </div>
 
     <div class="seven-nights-price mt-1" *ngIf="room.getPrice().getWeekPrice() > 0">

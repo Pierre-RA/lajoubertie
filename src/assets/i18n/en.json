@@ -44,6 +44,7 @@
   "récupération des chambres": "Loading rooms...",
   "retour": "Back to the list of rooms",
   "retour": "Back",
-  "conditions semaine": "from Saturday 4pm to Saturday up to 12am",
-  "taxe de séjour": "Not included: tourist tax 0.85 cts per person per night"
+  "condition semaine": "from Saturday 4pm to Saturday up to 12am",
+  "taxe de séjour": "Not included: tourist tax 0.85 cts per person per night",
+  "petit déjeuner compris": "breakfast included"
 }
