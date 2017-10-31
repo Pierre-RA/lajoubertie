@@ -7,6 +7,7 @@ export const environment = {
   production: false,
   year: '2017',
   wpBase: '//vccw.test/wp-json/wp/v2/',
+  icsBase: '//vccw.test/wp-json/booking-ics/v1/',
   mapsAPI: 'AIzaSyDN9hHVdB9-tEN4URIyrNsIGspS4lV7oxU',
   rootURL: '/',
   categories: {

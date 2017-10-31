@@ -2,7 +2,7 @@
 
 <section class="row justify-content-center">
   <div class="col-sm-8">
-    <h2>{{'title' | translate}}</h2>
+    <h2 class="mb-3">{{'title' | translate}}</h2>
     <p>
       Lieu dit La Joubertie<br />
       <span class="number">24380</span> Salon<br />
@@ -11,40 +11,66 @@
   </div>
 </section>
 
-<section class="row justify-content-center">
-  <form class="col-sm-8" [formGroup]="form">
-    <h2>Réserver ou connaître les disponibilités</h2>
-    <div class="input-group my-1"
-      [ngClass]="{
+<section class="row justify-content-center mt-3">
+  <form class="col-sm-8" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <h2 class="mb-3">{{ 'Contacter' | translate }}</h2>
+
+    <div class="input-group my-1" [ngClass]="{
       'has-warning': !form.controls['name'].valid,
       'has-success': form.controls['name'].valid}">
-      <input class="form-control mt-1"
-        type="name"
+      <div class="input-group-addon">
+        <i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>
+      </div>
+      <input class="form-control"
+        type="text"
+        [ngClass]="{'form-control-success': form.controls['name'].valid}"
         placeholder="{{ 'nom' | translate }}"
         formControlName="name"
-        [ngClass]="{'has-success': form.controls['name'].valid}"
-        autofocus />
+        autofocus>
     </div>
+
     <div class="input-group my-1"
       [ngClass]="{
       'has-warning': !form.controls['email'].valid,
       'has-success': form.controls['email'].valid}">
-      <input class="form-control mt-1"
+      <div class="input-group-addon">
+        <i class="fa fa-at fa-fw" aria-hidden="true"></i>
+      </div>
+      <input class="form-control"
         type="email"
         placeholder="{{ 'email' | translate }}"
         formControlName="email"
         [ngClass]="{'has-success': form.controls['email'].valid}"
-        autofocus />
+        autofocus>
     </div>
-    <input class="form-control mt-1"
-      type="phone"
-      placeholder="{{ 'phone' | translate }}"
-      formControlName="phone" />
+
+    <div class="input-group my-1">
+      <div class="input-group-addon">
+        <i class="fa fa-phone fa-fw" aria-hidden="true"></i>
+      </div>
+      <input class="form-control"
+        type="phone"
+        [ngClass]="{'is-valid': !form.controls['phone'].valid}"
+        placeholder="{{ 'phone' | translate }}"
+        formControlName="phone">
+    </div>
+
     <textarea class="form-control mt-1"
       placeholder="{{ 'message' | translate }}"
-      formControlName="name"></textarea>
+      formControlName="message"></textarea>
+
     <button type="submit" class="btn btn-primary my-1" [disabled]="!form.valid">
-      Envoyer
+       {{ 'envoyer' | translate }}
     </button>
   </form>
+</section>
+
+<section class="row justify-content-center mt-3">
+  <div class="col-sm-8">
+    <h2 class="mb-3">{{ 'Disponibilités' | translate }}</h2>
+    <calendar></calendar>
+    <p class="calendar-info">
+      {{ 'informations calendrier' | translate }}
+    </p>
+  </div>
 </section>

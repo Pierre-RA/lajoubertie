@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Meta } from '@angular/platform-browser';
+
 import { PostsService } from '../../posts/posts.service';
 import { MediaService } from '../../media/media.service';
 import { Post, Media } from '../../shared';
-
-import { Room, Price, Picture } from '../../shared/room';
+import { Room, Price, Picture } from '../../shared';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-lodges',
@@ -19,9 +21,14 @@ export class LodgesComponent implements OnInit {
   constructor(
     private ngbCarouselConfig: NgbCarouselConfig,
     private postsService: PostsService,
-    private mediaService: MediaService
+    private mediaService: MediaService,
+    private meta: Meta
   ) {
     this.ngbCarouselConfig.interval = 0;
+    this.meta.addTag({ name: 'og:type', content: 'website' });
+    this.meta.addTag({ name: 'og:title', content: 'Liste des gîtes - La Joubertie' });
+    this.meta.addTag({ name: 'og:url', content: 'https://lajoubertie.fr/lodges/' });
+    this.meta.addTag({ name: 'og:image', content: environment.rootURL + 'assets/img/la_joubertie.jpg' });
   }
 
   ngOnInit() {

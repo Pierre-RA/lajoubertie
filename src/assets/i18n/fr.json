@@ -46,5 +46,12 @@
   "retour": "Retour",
   "condition semaine": "du samedi dès 16h00 au samedi jusqu’à 12h00",
   "taxe de séjour": "Taxe de séjour en supplément : 0.85 cts par personne et par nuit",
-  "petit déjeuner compris": "petit déjeuner compris"
+  "petit déjeuner compris": "petit déjeuner compris",
+  "aujourd'hui": "aujourd'hui",
+  "précédent": "précédent",
+  "suivant": "suivant",
+  "envoyer": "envoyer",
+  "Disponibilités": "Disponibilités",
+  "Contacter": "Formulaire de contact pour réservations",
+  "informations calendrier": "Les jours indiqués d'une pastille rouge sont réservés."
 }

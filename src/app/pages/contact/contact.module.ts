@@ -4,6 +4,7 @@ import { ContactComponent } from './contact.component';
 import { routing } from './contact.routing';
 import { TranslateModule } from "@ngx-translate/core";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CalendarModule } from '../../calendar/calendar.module';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     routing,
     TranslateModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CalendarModule
   ],
   declarations: [ContactComponent]
 })

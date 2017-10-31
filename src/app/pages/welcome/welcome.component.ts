@@ -22,7 +22,7 @@ export class WelcomeComponent implements OnInit {
     this.meta.addTag({ name: 'og:type', content: 'website' });
     this.meta.addTag({ name: 'og:title', content: 'La Joubertie - Gîtes & Chambres d\'hôtes' });
     this.meta.addTag({ name: 'og:url', content: 'https://lajoubertie.fr/' });
-    this.meta.addTag({ name: 'og:image', content: this.assetsURL + '/img/joubertie_orange.jpg' });
+    this.meta.addTag({ name: 'og:image', content: this.assetsURL + '/img/la_joubertie.jpg' });
     this.centre = {
       title: '',
       lat: 45,

@@ -7,24 +7,24 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class PostsService {
 
-  private _wpBase = environment.wpBase;
+  private wpBase = environment.wpBase;
 
   constructor(private http: HttpClient) { }
 
   getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this._wpBase + 'posts');
+    return this.http.get<Post[]>(this.wpBase + 'posts');
   }
 
   getLodges(): Observable<Post[]> {
-    return this.http.get<Post[]>(this._wpBase + 'posts?categories=' + environment.categories.lodges);
+    return this.http.get<Post[]>(this.wpBase + 'posts?categories=' + environment.categories.lodges);
   }
 
   getRooms(): Observable<Post[]> {
-    return this.http.get<Post[]>(this._wpBase + 'posts?categories=' + environment.categories.rooms);
+    return this.http.get<Post[]>(this.wpBase + 'posts?categories=' + environment.categories.rooms);
   }
 
   getPost(slug: string): Observable<Post[]> {
-    return this.http.get<Post[]>(this._wpBase + `posts?slug=${slug}`);
+    return this.http.get<Post[]>(this.wpBase + `posts?slug=${slug}`);
   }
 
 }

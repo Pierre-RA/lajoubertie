@@ -25,6 +25,7 @@
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../node_modules/font-awesome/css/font-awesome.css",
         "../node_modules/snazzy-info-window/dist/snazzy-info-window.css",
+        "../node_modules/angular-calendar/dist/css/angular-calendar.css",
         "styles.css"
       ],
       "scripts": [],

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import { Meta } from '@angular/platform-browser';
 
 import { MediaService } from '../../media/media.service';
 import { Picture, Media } from '../../shared';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-gallery',
@@ -15,9 +17,14 @@ export class GalleryComponent implements OnInit {
   galleryImages: NgxGalleryImage[];
 
   constructor(
-    private mediaService: MediaService
+    private mediaService: MediaService,
+    private meta: Meta
   ) {
     this.galleryImages = [];
+    this.meta.addTag({ name: 'og:type', content: 'website' });
+    this.meta.addTag({ name: 'og:title', content: 'Galerie - La Joubertie' });
+    this.meta.addTag({ name: 'og:url', content: 'https://lajoubertie.fr/gallery/' });
+    this.meta.addTag({ name: 'og:image', content: environment.rootURL + 'assets/img/la_joubertie.jpg' });
     this.initPictures();
   }
 

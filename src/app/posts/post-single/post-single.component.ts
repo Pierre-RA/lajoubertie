@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { PostsService } from '../posts.service';
+import { Meta } from '@angular/platform-browser';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { HttpErrorResponse } from '@angular/common/http';
+
+import { PostsService } from '../posts.service';
 import { Post, Price, Picture, Room } from '../../shared';
 import 'rxjs/add/operator/switchMap';
 
@@ -23,7 +25,8 @@ export class PostSingleComponent implements OnInit {
     private postsService: PostsService,
     private location: Location,
     private translateService: TranslateService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private meta: Meta
   ) {
     this.error = false;
     this.lang = this.translateService.currentLang;
@@ -40,6 +43,7 @@ export class PostSingleComponent implements OnInit {
       this.postsService.getPost(params.get('slug')))
     .subscribe(
       (post: Post[]) => {
+        this.setTags(post[0]);
         this.room = new Room(
           post[0].slug, post[0].categories,
           +post[0].acf.people, +post[0].acf.rooms, +post[0].acf.bathrooms,
@@ -68,6 +72,15 @@ export class PostSingleComponent implements OnInit {
         this.error = true;
       }
     );
+  }
+
+  setTags(post: Post): void {
+    this.meta.addTag({ name: 'og:type', content: 'website' });
+    this.meta.addTag({ name: 'og:title', content: post.acf['title_EN'] + ' - La Joubertie' });
+    this.meta.addTag({ name: 'og:url', content: 'https://lajoubertie.fr/posts/' +  this.route.snapshot.params.slug });
+    if (post.acf['image_1']) {
+      this.meta.addTag({ name: 'og:image', content: post.acf['image_1'].sizes.thumbnail });
+    }
   }
 
   setLang() {

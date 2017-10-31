@@ -46,5 +46,12 @@
   "retour": "Back",
   "condition semaine": "from Saturday 4pm to Saturday up to 12am",
   "taxe de séjour": "Not included: tourist tax 0.85 cts per person per night",
-  "petit déjeuner compris": "breakfast included"
+  "petit déjeuner compris": "breakfast included",
+  "aujourd'hui": "today",
+  "précédent": "before",
+  "suivant": "next",
+  "envoyer": "send",
+  "Disponibilités": "Availability",
+  "Contacter": "Bookings enquiry contact form",
+  "informations calendrier": "Days with a red badge are booked."
 }

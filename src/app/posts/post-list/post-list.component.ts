@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../../shared/post';
-import { PostsService } from '../posts.service';
+import { Meta } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+
+import { Post } from '../../shared/post';
+import { PostsService } from '../posts.service';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -17,8 +19,14 @@ export class PostListComponent implements OnInit {
 
   constructor(
     private postsService: PostsService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private meta: Meta
+  ) {
+    this.meta.addTag({ name: 'og:type', content: 'website' });
+    this.meta.addTag({ name: 'og:title', content: 'Liste des chambres - La Joubertie' });
+    this.meta.addTag({ name: 'og:url', content: 'https://lajoubertie.fr/posts/' });
+    this.meta.addTag({ name: 'og:image', content: environment.rootURL + 'assets/img/la_joubertie.jpg' });
+  }
 
   ngOnInit() {
     this.postsService.getPosts().subscribe(
