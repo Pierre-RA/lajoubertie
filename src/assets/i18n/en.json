@@ -53,5 +53,7 @@
   "envoyer": "send",
   "Disponibilités": "Availability",
   "Contacter": "Bookings enquiry contact form",
-  "informations calendrier": "Days with a red badge are booked."
+  "informations calendrier": "Days with a red badge are booked.",
+  "Disponible": "Available",
+  "Réservé": "Booked"
 }

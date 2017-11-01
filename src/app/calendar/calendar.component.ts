@@ -26,7 +26,6 @@ export class CalendarComponent implements OnInit {
 
   beforeMonthViewRender({ body }: { body: CalendarMonthViewDay[] }): void {
     body.forEach(day => {
-      day.cssClass = 'blue-cell';
       day.badgeTotal = day.events.filter(
         event => event.meta.incrementsBadgeTotal
       ).length;

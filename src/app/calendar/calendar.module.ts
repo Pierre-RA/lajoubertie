@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from "@ngx-translate/core";
 
 import { CalendarComponent } from './calendar.component';
 import { IcsService } from './ics.service';
@@ -10,6 +11,7 @@ import { HeaderModule } from './header/header.module';
   imports: [
     CommonModule,
     Foo,
+    TranslateModule,
     HeaderModule
   ],
   declarations: [CalendarComponent],
