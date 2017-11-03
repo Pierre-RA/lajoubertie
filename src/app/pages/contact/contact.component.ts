@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Meta } from '@angular/platform-browser';
+import { ContactService } from './contact.service';
 
 import { environment } from '../../../environments/environment';
 
@@ -12,10 +13,12 @@ import { environment } from '../../../environments/environment';
 export class ContactComponent implements OnInit {
 
   form: FormGroup;
+  message;
 
   constructor(
     private fb: FormBuilder,
-    private meta: Meta
+    private meta: Meta,
+    private contactService: ContactService
   ) {
     this.meta.addTag({ name: 'og:type', content: 'website' });
     this.meta.addTag({ name: 'og:title', content: 'Contact - La Joubertie' });
@@ -37,9 +40,26 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(values: Object) {
-    console.log(this.form.controls['email'].valid);
+    this.message = null;
     if (this.form.valid) {
-      console.log('f');
+      this.contactService.sendContactMail(values).subscribe(
+        object => {
+          this.message = {
+            type: 'success',
+            content: 'Votre message a été envoyé.'
+          };
+        },
+        err => {
+          this.message = {
+            type: 'danger',
+            content: 'Votre message n\'a pu être envoyé.'
+          };
+        }
+      );
     }
+  }
+
+  removeAlert() {
+    this.message = null;
   }
 }

@@ -7,12 +7,12 @@ import { environment } from '../../../environments/environment';
 @Injectable()
 export class ContactService {
 
-  private _wpBase = environment.wpBase;
+  private sendmailBase = environment.sendmailBase;
 
   constructor(private http: HttpClient) { }
 
   sendContactMail(message): Observable<Object> {
-    return this.http.post(this._wpBase + 'sendmail.php', message);
+    return this.http.post(this.sendmailBase + 'simple', message);
   }
 
 }
