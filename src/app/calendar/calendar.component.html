@@ -3,12 +3,10 @@
 </calendar-header>
 
 <ng-template #customCellTemplate let-day="day" let-locale="locale">
-  <div class="cal-cell-top">
-    <span class="cal-day-badge" *ngIf="day.badgeTotal > 0">{{ day.badgeTotal }}</span>
-    <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+  <div>
+    <span class="cal-day-number size-fixed">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
   </div>
-  <small class="available" *ngIf="day.events.length == 0">{{ 'Disponible' | translate }}</small>
-  <small class="booked" *ngIf="day.events.length > 0">{{ 'Réservé' | translate }}</small>
+  <calendar-events [events]="day.events"></calendar-events>
 </ng-template>
 
 <mwl-calendar-month-view

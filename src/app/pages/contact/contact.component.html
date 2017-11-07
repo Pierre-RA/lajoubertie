@@ -1,7 +1,7 @@
 <h1>Contact</h1>
 
 <section class="row justify-content-center">
-  <div class="col-sm-8">
+  <div class="col-sm-12 col-lg-8">
     <h2 class="mb-3">{{'title' | translate}}</h2>
     <p>
       Lieu dit La Joubertie<br />
@@ -12,7 +12,7 @@
 </section>
 
 <section class="row justify-content-center mt-3">
-  <form class="col-sm-8" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <form class="col-sm-12 col-lg-8" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
     <h2 class="mb-3">{{ 'Contacter' | translate }}</h2>
 
     <div class="input-group my-1" [ngClass]="{
@@ -72,8 +72,13 @@
 </section>
 
 <section class="row justify-content-center mt-3">
-  <div class="col-sm-8">
+  <div class="col-sm-12 col-lg-8">
     <h2 class="mb-3">{{ 'Disponibilités' | translate }}</h2>
     <calendar></calendar>
+    <p class="calendar-legend mt-1">
+      <span class="available"></span> {{ 'Disponible' | translate}}
+      <span class="mx-1">&nbsp;</span>
+      <span class="booked"></span> {{ 'Réservé' | translate}}
+    </p>
   </div>
 </section>

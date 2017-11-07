@@ -6,13 +6,15 @@ import { CalendarComponent } from './calendar.component';
 import { IcsService } from './ics.service';
 import { CalendarModule as Foo } from 'angular-calendar';
 import { HeaderModule } from './header/header.module';
+import { EventsModule } from './events/events.module';
 
 @NgModule({
   imports: [
     CommonModule,
     Foo,
     TranslateModule,
-    HeaderModule
+    HeaderModule,
+    EventsModule
   ],
   declarations: [CalendarComponent],
   providers: [IcsService],

@@ -46,7 +46,11 @@ export class CalendarComponent implements OnInit {
     private icsService: IcsService,
     private translateService: TranslateService
   ) {
-    this.parseICS();
+    this.events = [];
+    this.parseICS('room2');
+    this.parseICS('room4');
+    this.parseICS('lodge2');
+    this.parseICS('lodge4');
     this.locale = this.translateService.currentLang;
     this.localeWeek = this.locale == 'en' ? 0 : 1;
   }
@@ -60,16 +64,15 @@ export class CalendarComponent implements OnInit {
     );
   }
 
-  parseICS() {
-    this.icsService.getSampleRoom().subscribe(text => {
+  parseICS(room: string) {
+    this.icsService.getRoom(room).subscribe(text => {
       let json = ical2json.convert(text);
-      this.events = [];
       if (json['VCALENDAR']) {
         json['VCALENDAR'].forEach(calendar => {
           if (calendar['VEVENT']) {
             calendar['VEVENT'].forEach(event => {
               this.events.push({
-                title: 'réservé',
+                title: room,
                 color: { primary: '#b22222', secondary: '#ff88aa' },
                 start: this.parse(event['DTSTART;VALUE=DATE']),
                 end: this.parse(event['DTEND;VALUE=DATE']),

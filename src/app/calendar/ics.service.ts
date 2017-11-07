@@ -14,4 +14,8 @@ export class IcsService {
     return this.http.get<String>(this.icsBase + 'room/1');
   }
 
+  getRoom(name: string): Observable<String> {
+    return this.http.get<String>(this.icsBase + 'room/' + name);
+  }
+
 }

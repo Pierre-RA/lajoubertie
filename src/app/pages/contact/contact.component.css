@@ -10,3 +10,26 @@ textarea {
   font-style: italic;
   padding-top: 4px;
 }
+
+.available,
+.booked {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: solid 1px silver;
+}
+
+.available {
+  background-color: rgb(136, 165, 196) !important;
+}
+
+.booked {
+  background-color: rgb(204, 154, 153) !important;
+}
+
+.calendar-legend {
+  color: grey;
+  text-align: center;
+  font-size: 12px;
+  line-height: 14px;
+}
