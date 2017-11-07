@@ -9,7 +9,16 @@
   <calendar-events [events]="day.events"></calendar-events>
 </ng-template>
 
+<ng-template #loading>
+  <div class="text-center">
+    <i class="fa fa-spin fa-spinner fa-5x"></i>
+    <br>
+    {{ 'Récupération du calendrier' | translate }}
+  </div>
+</ng-template>
+
 <mwl-calendar-month-view
+  *ngIf="events | async; else loading; let events"
   [viewDate]="viewDate"
   [events]="events"
   [locale]="locale"

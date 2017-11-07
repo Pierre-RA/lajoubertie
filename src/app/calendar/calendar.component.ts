@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IcsService } from './ics.service';
-import * as ical2json from 'ical2json';
+
 import {
   CalendarEvent,
   CalendarEventTimesChangedEvent,
   CalendarMonthViewDay
 } from 'angular-calendar';
 import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/forkJoin';
+import 'rxjs/add/operator/reduce';
+import 'rxjs/add/operator/zip';
 
 @Component({
   selector: 'calendar',
@@ -18,7 +22,7 @@ export class CalendarComponent implements OnInit {
 
   view: string = 'month';
   viewDate: Date = new Date();
-  events: CalendarEvent[];
+  events: Observable<Array<Object>>;
   locale: string;
   localeWeek: number;
 
@@ -46,16 +50,12 @@ export class CalendarComponent implements OnInit {
     private icsService: IcsService,
     private translateService: TranslateService
   ) {
-    this.events = [];
-    this.parseICS('room2');
-    this.parseICS('room4');
-    this.parseICS('lodge2');
-    this.parseICS('lodge4');
+    this.fetchEvents();
     this.locale = this.translateService.currentLang;
     this.localeWeek = this.locale == 'en' ? 0 : 1;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.translateService.onLangChange.subscribe(
       (event) => {
         this.locale = event.lang;
@@ -64,36 +64,20 @@ export class CalendarComponent implements OnInit {
     );
   }
 
-  parseICS(room: string) {
-    this.icsService.getRoom(room).subscribe(text => {
-      let json = ical2json.convert(text);
-      if (json['VCALENDAR']) {
-        json['VCALENDAR'].forEach(calendar => {
-          if (calendar['VEVENT']) {
-            calendar['VEVENT'].forEach(event => {
-              this.events.push({
-                title: room,
-                color: { primary: '#b22222', secondary: '#ff88aa' },
-                start: this.parse(event['DTSTART;VALUE=DATE']),
-                end: this.parse(event['DTEND;VALUE=DATE']),
-                meta: {
-                  incrementsBadgeTotal: false
-                }
-              });
-            });
-          }
-        });
-      }
+  fetchEvents(): void {
+    this.events = Observable.forkJoin([
+      this.icsService.getRoom('room2'),
+      this.icsService.getRoom('room4'),
+      this.icsService.getRoom('lodge2'),
+      this.icsService.getRoom('lodge4')
+    ])
+    .map(res => {
+      let tmp = [];
+      res.forEach(el => {
+        tmp = tmp.concat(el);
+      })
+      return tmp;
     });
-  }
-
-  parse(str): Date {
-    var y = str.substr(0,4),
-        m = str.substr(4,2) - 1,
-        d = str.substr(6,2);
-    var D = new Date(y,m,d);
-    return D;
-    // return (D.getFullYear() == y && D.getMonth() == m && D.getDate() == d) ? D : 'invalid date';
   }
 
 }
