@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Angulartics2GoogleAnalytics } from 'angulartics2';
 import { environment } from '../environments/environment';
 
 @Component({
@@ -14,7 +15,8 @@ export class AppComponent {
   year: string;
 
   constructor(
-    private translate: TranslateService
+    private translate: TranslateService,
+    private angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics
   ) {
     this.year = environment.year || '';
     this.navbarCollapsed = true;

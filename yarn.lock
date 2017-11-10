@@ -324,6 +324,10 @@ angular-resizable-element@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/angular-resizable-element/-/angular-resizable-element-1.2.4.tgz#983828eaced18f432814581ab4c25892c26197d9"
 
+angulartics2@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/angulartics2/-/angulartics2-3.3.0.tgz#910a200346a4a3990b0a4f5032916cc483dff563"
+
 ansi-html@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/ansi-html/-/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"

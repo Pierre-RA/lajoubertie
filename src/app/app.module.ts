@@ -10,6 +10,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { CalendarModule } from 'angular-calendar';
+import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
 
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     HttpClientModule,
     Wpng2RoutingModule,
+    Angulartics2Module.forRoot([ Angulartics2GoogleAnalytics ]),
     AgmCoreModule.forRoot({
       apiKey: environment.mapsAPI
     }),
