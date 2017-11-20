@@ -10,7 +10,8 @@ import { AgmCoreModule } from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { CalendarModule } from 'angular-calendar';
-import { Angulartics2Module, Angulartics2GoogleAnalytics } from 'angulartics2';
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
